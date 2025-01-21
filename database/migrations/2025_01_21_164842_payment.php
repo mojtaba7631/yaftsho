@@ -11,7 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-
+        Schema::create('payment', function (Blueprint $table) {
+            $table->id();
+            $table->integer('order_id');
+            $table->integer('amount');
+            $table->integer('payment_method');
+            $table->integer('payment_status');
+            $table->integer('transaction_code')->comment('shomareye tarakonesh');
+            $table->integer('transaction_date');
+            $table->timestamps();
+            $table->foreign('order_id')->references('id')->on('order')->onDelete('cascade')->onUpdate('cascade');
+        });
     }
 
     /**

@@ -1,0 +1,277 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+
+
+Table users {
+  id integer [primary key]
+  name varchar
+  family varchar
+  username varchar
+  email varchar
+  mobile varchar
+  password varchar
+  code varchar
+  created_at timestamp
+  national_code varchar
+  image varchar
+  active bool
+  gender enum
+  birth_date datetime
+}
+
+Table role {
+  id integer [primary key]
+  key varchar
+  title varchar
+  created_at timestamp 
+}
+
+Table user_role {
+  id integer [primary key]
+  user_id integer
+  role_id integer
+}
+
+Table category {
+  id integer [primary key]
+  parent_id integer
+  key varchar
+  title varchar
+  slug varchar
+  image varchar
+}
+
+Table product {
+  id integer [primary key]
+  title varchar
+  slug varchar
+  price varchar
+  description varchar
+  meta_description varchar
+  type enum
+}
+
+Table digital_product {
+  id integer [primary key]
+  product_id integer
+  file_url varchar
+  file_size integer
+  download_limit integer
+  lisence_code varchar
+}
+
+Table product_physical_variant {
+  id integer [primary key]
+  product_id integer
+  sku varchar
+  inventory integer
+  price integer
+  weight integer
+  post_price integer
+  dimensions varchar
+}
+
+Table attribute {
+  id integer [primary key]
+  name varchar
+}
+
+Table attribute_value {
+  id integer [primary key]
+  attribute_id integer
+  value varchar
+}
+
+Table product_variant_rel_attribute{
+  id integer [primary key]
+  product_variant_id integer
+  attribute_variant_id integer
+}
+
+Table product_category{
+  id integer [primary key]
+  product_id integer
+  category_id integer
+}
+
+Table product_images {
+  id integer [primary key]
+  product_id integer
+  url_image varchar
+  default_image bool
+}
+
+Table product_review {
+  id integer [primary key]
+  product_id integer
+  user_id integer
+  rating integer
+  comment varchar
+}
+
+Table product_digital_download {
+  id integer [primary key]
+  user_id integer
+  digital_product_id integer
+  download_date date
+}
+
+Table tags {
+  id integer [primary key]
+  title varchar
+}
+
+Table tag_product {
+  id integer [primary key]
+  tag_id integer
+  product_id integer
+}
+
+Table addresses {
+  id integer [primary key]
+  user_id integer
+  city_id integer
+  address varchar
+  postal_code varchar
+  Longitude varchar
+  Latitude varchar
+}
+
+Table favorite_product {
+  id integer [primary key]
+  user_id integer
+  product_id integer
+  favorite_date datetime
+}
+
+Table city {
+  id integer [primary key]
+  name varchar
+  key varchar
+  state_id integer
+}
+
+Table state {
+  id integer [primary key]
+  name varchar
+  key varchar
+}
+
+Table orders {
+  id integer [primary key]
+  user_id integer
+  total_amount integer
+  status integer
+  order_code varchar
+}
+
+Table order_detail {
+  id integer [primary key]
+  order_id integer
+  count integer
+  price integer
+}
+
+Table discount_product {
+  id integer [primary key]
+  product_id integer
+  discount_value integer
+  discount_type enum
+  start datetime
+  end datetime
+  count integer
+}
+
+Table payment {
+  id integer [primary key]
+  order_id integer
+  amount integer
+  payment_method enum
+  payment_status integer
+  transation_id varcahr
+  transation_date datetime
+}
+
+Table returns {
+  id integer [primary key]
+  order_id integer
+  product_variant_id integer
+  count integer
+  reason varchar
+  return_status integer
+  return_date datetime
+}
+
+Table currency {
+  id integer [primary key]
+  title varchar
+}
+
+Table wallet {
+  id integer [primary key]
+  user_id integer
+  ballance integer
+  currency_id integer
+}
+
+Table wallet_transaction {
+  id integer [primary key]
+  wallet_id integer
+  amount integer 
+  description varchar
+  status integer
+  type enum
+  transaction_date datetime
+  refrence varchar
+}
+
+Table user_payment_method {
+  id integer [primary key]
+  user_id integer
+  method_type enum
+  default enum
+  detail varchar
+}
+
+Table wallet_charge {
+  id integer [primary key]
+  wallet_id integer
+  user_payment_method_id integer
+  status enum
+}
+
+Table wallet_withdrawals {
+  id integer [primary key]
+  wallet_id integer
+  amount integer
+  user_payment_method_id integer
+  status enum
+}
+
+Table config_project {
+  id integer [primary key]
+  key varchar
+  value varchar
+}
+
+
+Ref: product.id < product_images.product_id
+
+ref: product.id < digital_product.product_id
+
+ref: product.id < product_physical_variant.product_id
+
+ref: product.id < product_review.product_id
+
+ref:state.id < city.state_id
+
+ref:users.id < user_role.user_id
+
+ref:role.id < user_role.role_id
+
+ref: orders.id < order_detail.order_id
+
+ref:users.id < addresses.user_id
+
+Ref: "payment"."order_id" < "payment"."id"
