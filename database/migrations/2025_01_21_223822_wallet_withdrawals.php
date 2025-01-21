@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('config_project', function (Blueprint $table) {
+        Schema::create('wallet_withdrawals', function (Blueprint $table) {
             $table->id();
-            $table->string('key');
-            $table->string('value');
+            $table->integer('wallet_id');
+            $table->integer('user_payment_method_id');
+            $table->integer('amount');
+            $table->integer('status');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('config_project');
+        Schema::dropIfExists('wallet_withdrawals');
     }
 };

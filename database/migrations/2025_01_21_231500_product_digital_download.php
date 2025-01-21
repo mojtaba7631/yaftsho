@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('config_project', function (Blueprint $table) {
+        Schema::create('product_digital_download', function (Blueprint $table) {
             $table->id();
-            $table->string('key');
-            $table->string('value');
+            $table->integer('digital_product_id');
+            $table->integer('user_id');
+            $table->datetimes('download_date');
             $table->timestamps();
+            $table->foreign('digital_product_id')->references('id')->on('digital_products')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('config_project');
+        Schema::dropIfExists('product_digital_download');
     }
 };

@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('config_project', function (Blueprint $table) {
+        Schema::create('tag_product', function (Blueprint $table) {
             $table->id();
-            $table->string('key');
-            $table->string('value');
+            $table->integer('tag_id');
+            $table->integer('product_id');
             $table->timestamps();
+            $table->foreign('tag_id')->references('id')->on('tags')->ondelete('cascade')->onupdate('cascade');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->onupdate('cascade');
         });
     }
 
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('config_project');
+        Schema::dropIfExists('tag_product');
     }
 };

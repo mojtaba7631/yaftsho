@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('returns', function (Blueprint $table) {
+        Schema::create('product_variant_rel_attribute', function (Blueprint $table) {
             $table->id();
-            $table->integer('order_id');
             $table->integer('product_variant_id');
-            $table->integer('count');
-            $table->string('reason')->nullable();
-            $table->integer('return_status');
-            $table->datetimes('return_date');
+            $table->integer('attribute_variant_id');
             $table->timestamps();
+            $table->foreign('product_variant_id')->references('id')->on('product_variant')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('attribute_variant_id')->references('id')->on('attribute_variant')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('returns');
+        Schema::dropIfExists('product_variant_rel_attribute');
     }
 };
