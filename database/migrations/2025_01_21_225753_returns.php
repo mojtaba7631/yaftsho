@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('returns', function (Blueprint $table) {
             $table->id();
-            $table->integer('order_id');
-            $table->integer('product_variant_id');
+            $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('product_variant_id');
             $table->integer('count');
             $table->string('reason')->nullable();
             $table->integer('return_status');
-            $table->datetimes('return_date');
+            $table->datetime('return_date');
             $table->timestamps();
+            $table->foreign('product_variant_id')->references('id')->on('product_physical_variant');
         });
     }
 

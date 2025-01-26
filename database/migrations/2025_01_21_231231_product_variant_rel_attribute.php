@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('product_variant_rel_attribute', function (Blueprint $table) {
             $table->id();
-            $table->integer('product_variant_id');
-            $table->integer('attribute_variant_id');
+            $table->unsignedBigInteger('product_variant_id');
+            $table->unsignedBigInteger('attribute_variant_id');
             $table->timestamps();
-            $table->foreign('product_variant_id')->references('id')->on('product_variant')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('attribute_variant_id')->references('id')->on('attribute_variant')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('product_variant_id')->references('id')->on('product_physical_variant')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('attribute_variant_id')->references('id')->on('attribute_value')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

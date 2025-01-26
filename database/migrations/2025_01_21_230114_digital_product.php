@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('digital_product', function (Blueprint $table) {
             $table->id();
-            $table->integer('product_id');
+            $table->unsignedBigInteger('product_id');
             $table->integer('file_size')->nullable();
             $table->integer('download_limit')->nullable();
             $table->string('file_url')->nullable();

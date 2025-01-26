@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('discount_product', function (Blueprint $table) {
             $table->id();
-            $table->integer('product_id');
+            $table->unsignedBigInteger('product_id');
             $table->integer('discount_value');
             $table->integer('discount_type');
-            $table->datetimes('start_date');
-            $table->datetimes('end_date');
+            $table->datetime('start_date');
+            $table->datetime('end_date');
             $table->integer('count');
             $table->timestamps();
             $table->foreign('product_id')->references('id')->on('product')->onDelete('cascade')->onUpdate('cascade');

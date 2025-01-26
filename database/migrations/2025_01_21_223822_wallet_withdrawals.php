@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('wallet_withdrawals', function (Blueprint $table) {
             $table->id();
-            $table->integer('wallet_id');
-            $table->integer('user_payment_method_id');
+            $table->unsignedBigInteger('wallet_id');
+            $table->unsignedBigInteger('user_payment_method_id');
             $table->integer('amount');
             $table->integer('status');
             $table->timestamps();

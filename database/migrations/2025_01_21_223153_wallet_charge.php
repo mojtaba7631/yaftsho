@@ -12,8 +12,8 @@ return new class extends Migration {
     {
         Schema::create('wallet_charge', function (Blueprint $table) {
             $table->id();
-            $table->integer('wallet_id');
-            $table->integer('user_payment_method_id');
+            $table->unsignedBigInteger('wallet_id');
+            $table->unsignedBigInteger('user_payment_method_id');
             $table->integer('status');
             $table->timestamps();
             $table->foreign('wallet_id')->references('id')->on('wallet')->onDelete('cascade')->onUpdate('cascade');

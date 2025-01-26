@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('product_digital_download', function (Blueprint $table) {
             $table->id();
-            $table->integer('digital_product_id');
-            $table->integer('user_id');
-            $table->datetimes('download_date');
+            $table->unsignedBigInteger('digital_product_id');
+            $table->unsignedBigInteger('user_id');
+            $table->datetime('download_date');
             $table->timestamps();
-            $table->foreign('digital_product_id')->references('id')->on('digital_products')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('digital_product_id')->references('id')->on('digital_product')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

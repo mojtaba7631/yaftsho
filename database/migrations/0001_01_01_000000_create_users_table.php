@@ -15,14 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('name',100);
             $table->string('family',100);
-            $table->string('email')->unique();
-            $table->string('user_name')->unique();
+            $table->string('email',190)->unique();
+            $table->string('user_name',190)->unique();
             $table->string('password');
-            $table->string('mobile')->unique();
+            $table->string('mobile',190)->unique();
             $table->string('code')->nullable();
-            $table->string('national_code')->unique();
+            $table->string('national_code',190)->unique();
             $table->integer('gender')->default(0);
-            $table->date('birthday')->default('0000-00-00');
+            $table->date('birthday')->default(null);
             $table->integer('status')->default(0);
             $table->string('image',300)->nullable();
             $table->timestamp('email_verified_at')->nullable();
@@ -31,7 +31,7 @@ return new class extends Migration
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
-            $table->string('email')->primary();
+            $table->string('email',190)->primary();
             $table->string('token');
             $table->timestamp('created_at')->nullable();
         });

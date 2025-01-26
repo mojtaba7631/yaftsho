@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('product_physical_variant', function (Blueprint $table) {
             $table->id();
-            $table->integer('product_id');
+            $table->unsignedBigInteger('product_id');
             $table->integer('inventory');
             $table->integer('price');
             $table->integer('weight');
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('sku')->nullable();
             $table->string('dimensions')->nullable();
             $table->timestamps();
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('product_id')->references('id')->on('product')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
