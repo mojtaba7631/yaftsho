@@ -1,48 +1,108 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ */
+
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
+/**
+ * Class User
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $family
+ * @property string $email
+ * @property string $user_name
+ * @property string $password
+ * @property string $mobile
+ * @property string|null $code
+ * @property string $national_code
+ * @property int $gender
+ * @property Carbon $birthday
+ * @property int $status
+ * @property string|null $image
+ * @property Carbon|null $email_verified_at
+ * @property string|null $remember_token
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ *
+ * @property Collection|Address[] $addresses
+ * @property Collection|FavoriteProduct[] $favorite_products
+ * @property Collection|ProductReview[] $product_reviews
+ * @property Collection|UserPaymentMethod[] $user_payment_methods
+ * @property Collection|Role[] $roles
+ * @property Collection|Wallet[] $wallets
+ *
+ * @package App\Models
+ */
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+	protected $table = 'users';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+	protected $casts = [
+		'gender' => 'int',
+		'birthday' => 'datetime',
+		'status' => 'int',
+		'email_verified_at' => 'datetime'
+	];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+	protected $hidden = [
+		'password',
+		'remember_token'
+	];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
+	protected $fillable = [
+		'name',
+		'family',
+		'email',
+		'user_name',
+		'password',
+		'mobile',
+		'code',
+		'national_code',
+		'gender',
+		'birthday',
+		'status',
+		'image',
+		'email_verified_at',
+		'remember_token'
+	];
+
+	public function addresses(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
-    }
+		return $this->hasMany(Address::class);
+	}
+
+	public function favorite_products(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+		return $this->hasMany(FavoriteProduct::class);
+	}
+
+	public function product_reviews(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+		return $this->hasMany(ProductReview::class);
+	}
+
+	public function user_payment_methods(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+		return $this->hasMany(UserPaymentMethod::class);
+	}
+
+	public function roles()
+	{
+		return $this->belongsToMany(Role::class, 'user_role')
+					->withPivot('id')
+					->withTimestamps();
+	}
+
+	public function wallets(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+		return $this->hasMany(Wallet::class);
+	}
 }

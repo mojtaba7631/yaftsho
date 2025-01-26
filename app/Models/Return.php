@@ -10,40 +10,45 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class ProductVariantRelAttribute
- *
+ * Class Return
+ * 
  * @property int $id
+ * @property int $order_id
  * @property int $product_variant_id
- * @property int $attribute_variant_id
+ * @property int $count
+ * @property string|null $reason
+ * @property int $return_status
+ * @property Carbon $return_date
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- *
- * @property AttributeValue $attribute_value
+ * 
  * @property ProductPhysicalVariant $product_physical_variant
  *
  * @package App\Models
  */
-class ProductVariantRelAttribute extends Model
+class Return extends Model
 {
-	protected $table = 'product_variant_rel_attribute';
+	protected $table = 'returns';
 
 	protected $casts = [
+		'order_id' => 'int',
 		'product_variant_id' => 'int',
-		'attribute_variant_id' => 'int'
+		'count' => 'int',
+		'return_status' => 'int',
+		'return_date' => 'datetime'
 	];
 
 	protected $fillable = [
+		'order_id',
 		'product_variant_id',
-		'attribute_variant_id'
+		'count',
+		'reason',
+		'return_status',
+		'return_date'
 	];
 
-	public function attribute_value(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-		return $this->belongsTo(AttributeValue::class, 'attribute_variant_id');
-	}
-
-	public function product_physical_variant(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
+	public function product_physical_variant()
+	{
 		return $this->belongsTo(ProductPhysicalVariant::class, 'product_variant_id');
 	}
 }
