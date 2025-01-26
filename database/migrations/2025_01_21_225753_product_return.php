@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('returns', function (Blueprint $table) {
+        Schema::create('product_return', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('product_variant_id');
@@ -21,6 +21,7 @@ return new class extends Migration
             $table->datetime('return_date');
             $table->timestamps();
             $table->foreign('product_variant_id')->references('id')->on('product_physical_variant');
+            $table->foreign('order_id')->references('id')->on('orders');
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('returns');
+        Schema::dropIfExists('product_return');
     }
 };

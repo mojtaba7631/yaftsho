@@ -9,11 +9,10 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * Class User
- *
+ * 
  * @property int $id
  * @property string $name
  * @property string $family
@@ -31,7 +30,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property string|null $remember_token
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- *
+ * 
  * @property Collection|Address[] $addresses
  * @property Collection|FavoriteProduct[] $favorite_products
  * @property Collection|ProductReview[] $product_reviews
@@ -41,7 +40,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  *
  * @package App\Models
  */
-class User extends Authenticatable
+class User extends Model
 {
 	protected $table = 'users';
 
@@ -74,23 +73,23 @@ class User extends Authenticatable
 		'remember_token'
 	];
 
-	public function addresses(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
+	public function addresses()
+	{
 		return $this->hasMany(Address::class);
 	}
 
-	public function favorite_products(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
+	public function favorite_products()
+	{
 		return $this->hasMany(FavoriteProduct::class);
 	}
 
-	public function product_reviews(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
+	public function product_reviews()
+	{
 		return $this->hasMany(ProductReview::class);
 	}
 
-	public function user_payment_methods(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
+	public function user_payment_methods()
+	{
 		return $this->hasMany(UserPaymentMethod::class);
 	}
 
@@ -101,8 +100,8 @@ class User extends Authenticatable
 					->withTimestamps();
 	}
 
-	public function wallets(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
+	public function wallets()
+	{
 		return $this->hasMany(Wallet::class);
 	}
 }

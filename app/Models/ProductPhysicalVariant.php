@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ProductPhysicalVariant
- * 
+ *
  * @property int $id
  * @property int $product_id
  * @property int $inventory
@@ -23,10 +23,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $dimensions
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Product $product
+ * @property Collection|ProductReturn[] $product_returns
  * @property Collection|ProductVariantRelAttribute[] $product_variant_rel_attributes
- * @property Collection|Return[] $returns
  *
  * @package App\Models
  */
@@ -57,13 +57,13 @@ class ProductPhysicalVariant extends Model
 		return $this->belongsTo(Product::class);
 	}
 
-	public function product_variant_rel_attributes()
-	{
-		return $this->hasMany(ProductVariantRelAttribute::class, 'product_variant_id');
+	public function product_returns(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+		return $this->hasMany(ProductReturn::class, 'product_variant_id');
 	}
 
-	public function returns()
-	{
-		return $this->hasMany(Return::class, 'product_variant_id');
+	public function product_variant_rel_attributes(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+		return $this->hasMany(ProductVariantRelAttribute::class, 'product_variant_id');
 	}
 }

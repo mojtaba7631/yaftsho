@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property Collection|OrderDetail[] $order_details
  * @property Collection|Payment[] $payments
+ * @property Collection|ProductReturn[] $product_returns
  *
  * @package App\Models
  */
@@ -51,5 +52,10 @@ class Order extends Model
 	public function payments()
 	{
 		return $this->hasMany(Payment::class);
+	}
+
+	public function product_returns()
+	{
+		return $this->hasMany(ProductReturn::class);
 	}
 }

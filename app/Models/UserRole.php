@@ -11,13 +11,13 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class UserRole
- *
+ * 
  * @property int $id
  * @property int $user_id
  * @property int $role_id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- *
+ * 
  * @property Role $role
  * @property User $user
  *
@@ -37,13 +37,13 @@ class UserRole extends Model
 		'role_id'
 	];
 
-	public function role(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
+	public function role()
+	{
 		return $this->belongsTo(Role::class);
 	}
 
-	public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
+	public function user()
+	{
 		return $this->belongsTo(User::class);
 	}
 }

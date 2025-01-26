@@ -10,7 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Return
+ * Class ProductReturn
  * 
  * @property int $id
  * @property int $order_id
@@ -22,13 +22,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * 
+ * @property Order $order
  * @property ProductPhysicalVariant $product_physical_variant
  *
  * @package App\Models
  */
-class Return extends Model
+class ProductReturn extends Model
 {
-	protected $table = 'returns';
+	protected $table = 'product_return';
 
 	protected $casts = [
 		'order_id' => 'int',
@@ -46,6 +47,11 @@ class Return extends Model
 		'return_status',
 		'return_date'
 	];
+
+	public function order()
+	{
+		return $this->belongsTo(Order::class);
+	}
 
 	public function product_physical_variant()
 	{

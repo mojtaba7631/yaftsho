@@ -12,13 +12,13 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class AttributeValue
- *
+ * 
  * @property int $id
  * @property int $attribute_id
  * @property string $value
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- *
+ * 
  * @property Attribute $attribute
  * @property Collection|ProductVariantRelAttribute[] $product_variant_rel_attributes
  *
@@ -37,13 +37,13 @@ class AttributeValue extends Model
 		'value'
 	];
 
-	public function attribute(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
+	public function attribute()
+	{
 		return $this->belongsTo(Attribute::class);
 	}
 
-	public function product_variant_rel_attributes(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
+	public function product_variant_rel_attributes()
+	{
 		return $this->hasMany(ProductVariantRelAttribute::class, 'attribute_variant_id');
 	}
 }

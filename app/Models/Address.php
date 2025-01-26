@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Address
- *
+ * 
  * @property int $id
  * @property int $user_id
  * @property int $city_id
@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $latitude
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- *
+ * 
  * @property User $user
  *
  * @package App\Models
@@ -44,8 +44,8 @@ class Address extends Model
 		'latitude'
 	];
 
-	public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
+	public function user()
+	{
 		return $this->belongsTo(User::class);
 	}
 }
