@@ -8,11 +8,11 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * Class User
- * 
+ *
  * @property int $id
  * @property string $name
  * @property string $family
@@ -30,17 +30,42 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $remember_token
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
  * @property Collection|Address[] $addresses
  * @property Collection|FavoriteProduct[] $favorite_products
  * @property Collection|ProductReview[] $product_reviews
  * @property Collection|UserPaymentMethod[] $user_payment_methods
  * @property Collection|Role[] $roles
  * @property Collection|Wallet[] $wallets
- *
  * @package App\Models
+ * @property-read int|null $addresses_count
+ * @property-read int|null $favorite_products_count
+ * @property-read int|null $product_reviews_count
+ * @property-read int|null $roles_count
+ * @property-read int|null $user_payment_methods_count
+ * @property-read int|null $wallets_count
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereBirthday($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereEmailVerifiedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereFamily($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereGender($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereMobile($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereNationalCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User wherePassword($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereRememberToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereUserName($value)
+ * @mixin \Eloquent
  */
-class User extends Model
+class User extends Authenticatable
 {
 	protected $table = 'users';
 

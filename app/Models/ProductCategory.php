@@ -11,17 +11,24 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ProductCategory
- * 
+ *
  * @property int $id
  * @property int $product_id
  * @property int $category_id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
  * @property Category $category
  * @property Product $product
- *
  * @package App\Models
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereProductId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class ProductCategory extends Model
 {

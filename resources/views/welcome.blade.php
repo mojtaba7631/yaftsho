@@ -4,5 +4,5 @@
     title
 @endsection
 @section('content')
-    <livewire:admin-login-livewire />
+   home
 @endsection

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('code')->nullable();
             $table->string('national_code',190)->unique();
             $table->integer('gender')->default(0);
-            $table->date('birthday')->default(null);
+            $table->date('birthday')->nullable();
             $table->integer('status')->default(0);
             $table->string('image',300)->nullable();
             $table->timestamp('email_verified_at')->nullable();

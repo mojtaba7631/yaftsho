@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class WalletWithdrawal
- * 
+ *
  * @property int $id
  * @property int $wallet_id
  * @property int $user_payment_method_id
@@ -19,8 +19,18 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $status
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- *
  * @package App\Models
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletWithdrawal newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletWithdrawal newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletWithdrawal query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletWithdrawal whereAmount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletWithdrawal whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletWithdrawal whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletWithdrawal whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletWithdrawal whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletWithdrawal whereUserPaymentMethodId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletWithdrawal whereWalletId($value)
+ * @mixin \Eloquent
  */
 class WalletWithdrawal extends Model
 {

@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class UserPaymentMethod
- * 
+ *
  * @property int $id
  * @property int $user_id
  * @property int $method_type
@@ -20,11 +20,21 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $detail
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
  * @property User $user
  * @property Collection|WalletCharge[] $wallet_charges
- *
  * @package App\Models
+ * @property-read int|null $wallet_charges_count
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UserPaymentMethod newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UserPaymentMethod newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UserPaymentMethod query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UserPaymentMethod whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UserPaymentMethod whereDefault($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UserPaymentMethod whereDetail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UserPaymentMethod whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UserPaymentMethod whereMethodType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UserPaymentMethod whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UserPaymentMethod whereUserId($value)
+ * @mixin \Eloquent
  */
 class UserPaymentMethod extends Model
 {

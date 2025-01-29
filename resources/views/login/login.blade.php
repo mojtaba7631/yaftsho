@@ -25,22 +25,23 @@
                 <div class="card card-md">
                     <div class="card-body">
                         <h2 class="h2 text-center mb-4">Login to your account</h2>
-                        <form action="./" method="get" autocomplete="off" novalidate>
+                        <form action="{{route('login.do')}}" method="post" autocomplete="off" novalidate>
+                            @csrf
                             <div class="mb-3">
                                 <label class="form-label">Email address</label>
-                                <input type="email" class="form-control" placeholder="your@email.com" autocomplete="off">
+                                <input type="email" class="form-control" placeholder="your@email.com" autocomplete="off" name="email">
                             </div>
                             <div class="mb-2">
                                 <label class="form-label">
                                     Password
                                     <span class="form-label-description">
-					<a href="./forgot-password.html">I forgot password</a>
-				</span>
+					                    <a href="#">I forgot password</a>
+				                    </span>
                                 </label>
                                 <div class="input-group input-group-flat">
 
                                     <input type="password" class="form-control" placeholder="Your password"
-                                           autocomplete="off">
+                                           autocomplete="off" name="password">
                                     <span class="input-group-text">
 		<a href="#" class="link-secondary" title="Show password" data-bs-toggle="tooltip">
 	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"

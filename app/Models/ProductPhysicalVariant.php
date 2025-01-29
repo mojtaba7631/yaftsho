@@ -23,12 +23,26 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $dimensions
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- *
  * @property Product $product
  * @property Collection|ProductReturn[] $product_returns
  * @property Collection|ProductVariantRelAttribute[] $product_variant_rel_attributes
- *
  * @package App\Models
+ * @property-read int|null $product_returns_count
+ * @property-read int|null $product_variant_rel_attributes_count
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductPhysicalVariant newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductPhysicalVariant newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductPhysicalVariant query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductPhysicalVariant whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductPhysicalVariant whereDimensions($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductPhysicalVariant whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductPhysicalVariant whereInventory($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductPhysicalVariant wherePostPrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductPhysicalVariant wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductPhysicalVariant whereProductId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductPhysicalVariant whereSku($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductPhysicalVariant whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductPhysicalVariant whereWeight($value)
+ * @mixin \Eloquent
  */
 class ProductPhysicalVariant extends Model
 {

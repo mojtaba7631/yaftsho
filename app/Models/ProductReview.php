@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ProductReview
- * 
+ *
  * @property int $id
  * @property int $product_id
  * @property int $user_id
@@ -19,11 +19,20 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $comment
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
  * @property Product $product
  * @property User $user
- *
  * @package App\Models
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReview newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReview newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReview query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReview whereComment($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReview whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReview whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReview whereProductId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReview whereRating($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReview whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReview whereUserId($value)
+ * @mixin \Eloquent
  */
 class ProductReview extends Model
 {

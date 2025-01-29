@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ProductReturn
- * 
+ *
  * @property int $id
  * @property int $order_id
  * @property int $product_variant_id
@@ -21,11 +21,22 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon $return_date
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
  * @property Order $order
  * @property ProductPhysicalVariant $product_physical_variant
- *
  * @package App\Models
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReturn newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReturn newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReturn query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReturn whereCount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReturn whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReturn whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReturn whereOrderId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReturn whereProductVariantId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReturn whereReason($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReturn whereReturnDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReturn whereReturnStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductReturn whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class ProductReturn extends Model
 {

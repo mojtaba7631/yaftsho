@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class WalletTransaction
- * 
+ *
  * @property int $id
  * @property int $wallet_id
  * @property int $amount
@@ -22,10 +22,22 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $reference
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
  * @property Wallet $wallet
- *
  * @package App\Models
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletTransaction newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletTransaction newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletTransaction query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletTransaction whereAmount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletTransaction whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletTransaction whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletTransaction whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletTransaction whereReference($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletTransaction whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletTransaction whereTransactionDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletTransaction whereType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletTransaction whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletTransaction whereWalletId($value)
+ * @mixin \Eloquent
  */
 class WalletTransaction extends Model
 {

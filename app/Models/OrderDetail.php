@@ -11,17 +11,25 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class OrderDetail
- * 
+ *
  * @property int $id
  * @property int $order_id
  * @property int $count
  * @property int $price
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
  * @property Order $order
- *
  * @package App\Models
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OrderDetail newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OrderDetail newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OrderDetail query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OrderDetail whereCount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OrderDetail whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OrderDetail whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OrderDetail whereOrderId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OrderDetail wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OrderDetail whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class OrderDetail extends Model
 {

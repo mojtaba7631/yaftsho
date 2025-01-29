@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Product
- * 
+ *
  * @property int $id
  * @property string $title
  * @property string $slug
@@ -22,7 +22,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $type
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
  * @property Collection|DigitalProduct[] $digital_products
  * @property Collection|DiscountProduct[] $discount_products
  * @property Collection|FavoriteProduct[] $favorite_products
@@ -31,8 +30,28 @@ use Illuminate\Database\Eloquent\Model;
  * @property Collection|ProductPhysicalVariant[] $product_physical_variants
  * @property Collection|ProductReview[] $product_reviews
  * @property Collection|Tag[] $tags
- *
  * @package App\Models
+ * @property-read int|null $categories_count
+ * @property-read int|null $digital_products_count
+ * @property-read int|null $discount_products_count
+ * @property-read int|null $favorite_products_count
+ * @property-read int|null $product_images_count
+ * @property-read int|null $product_physical_variants_count
+ * @property-read int|null $product_reviews_count
+ * @property-read int|null $tags_count
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereMetaDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class Product extends Model
 {

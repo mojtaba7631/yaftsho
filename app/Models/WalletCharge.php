@@ -11,18 +11,26 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class WalletCharge
- * 
+ *
  * @property int $id
  * @property int $wallet_id
  * @property int $user_payment_method_id
  * @property int $status
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
  * @property UserPaymentMethod $user_payment_method
  * @property Wallet $wallet
- *
  * @package App\Models
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletCharge newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletCharge newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletCharge query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletCharge whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletCharge whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletCharge whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletCharge whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletCharge whereUserPaymentMethodId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WalletCharge whereWalletId($value)
+ * @mixin \Eloquent
  */
 class WalletCharge extends Model
 {
