@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en"  dir="rtl" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
         @yield('title')
     </title>
-    @vite('resources/css/tabler.css')
+    @vite('resources/css/tabler_rtl.css')
     @yield('custom_css')
     @livewireStyles
 </head>

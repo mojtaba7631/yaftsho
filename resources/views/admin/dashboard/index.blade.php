@@ -1,10 +1,10 @@
-@extends('base.base_layout_tabler')
+@extends('base.base_layout_admin_dashboard')
 
 @section('title')
     admin dashboard
 @endsection
 
-@section('content')
+@section('dashboard_content')
     <h1>
         main content
     </h1>
