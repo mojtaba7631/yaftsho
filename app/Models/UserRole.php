@@ -44,13 +44,13 @@ class UserRole extends Model
 		'role_id'
 	];
 
-	public function role()
-	{
+	public function role(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
 		return $this->belongsTo(Role::class);
 	}
 
-	public function user()
-	{
+	public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
 		return $this->belongsTo(User::class);
 	}
 }

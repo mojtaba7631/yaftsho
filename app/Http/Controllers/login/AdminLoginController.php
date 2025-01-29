@@ -6,6 +6,7 @@ use App\Helper\CheckingUserRole;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class AdminLoginController extends Controller
 {
@@ -22,12 +23,16 @@ class AdminLoginController extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             $user_info = Auth::user();
 
-            CheckingUserRole::is_admin($user_info);
+            $check_admin = CheckingUserRole::is_admin($user_info);
 
-            return redirect()->route('home');
-        }
-        else
-        {
+            Log::info($check_admin.'+');
+
+            if (!$check_admin) {
+                Auth::logout();
+                return back();
+            }
+            return redirect()->route('admin.dashboard');
+        } else {
             return back();
         }
     }

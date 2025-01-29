@@ -12,8 +12,13 @@ class CheckingUserRole
     {
         $user_roles = $user->roles();
 
-        Log::info($user_roles);
+        foreach ($user_roles->get() as $user_role) {
+            Log::info($user_role);
 
-        foreach ($user_roles as $user_role) {}
+            if ($user_role->key == EnumRole::admin->value) {
+                return true;
+            }
+        }
+        return false;
     }
 }
