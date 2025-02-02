@@ -8,14 +8,15 @@ use Illuminate\Http\Request;
 
 class AdminProductController extends Controller
 {
-    public function index(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    public function index(): \Illuminate\Contracts\View\View
     {
         $products = Product::query()->paginate(15);
         return view('admin.products.index', compact('products'));
     }
 
-    public function create()
+    public function create(): \Illuminate\Contracts\View\View
     {
+        return view('admin.products.create');
     }
 
     public function store(Request $request)
