@@ -9,6 +9,47 @@ import "@tabler/core/dist/libs/nouislider/dist/nouislider.min.js";
 import "@tabler/core/dist/libs/litepicker/dist/litepicker.js";
 import "@tabler/core/dist/libs/tom-select/dist/js/tom-select.base.min.js";
 import "@tabler/core/dist/libs/tinymce/tinymce.min.js";
-// import "@tabler/core/dist/libs/t
+import "@tabler/core/dist/libs/tinymce/themes/silver/index.js";
+import "@tabler/core/dist/libs/tinymce/themes/silver/theme.js";
+import "@tabler/core/dist/libs/tinymce/models/dom/model.js";
+import "@tabler/core/dist/libs/tinymce/models/dom/index.js";
+import "@tabler/core/dist/libs/tinymce/icons/default/icons.js";
+import "@tabler/core/dist/libs/tinymce/icons/default/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/advlist/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/advlist/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/autolink/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/autolink/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/lists/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/lists/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/link/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/link/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/image/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/image/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/charmap/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/charmap/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/preview/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/preview/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/anchor/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/anchor/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/searchreplace/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/searchreplace/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/visualblocks/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/visualblocks/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/code/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/code/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/fullscreen/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/fullscreen/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/insertdatetime/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/insertdatetime/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/media/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/media/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/table/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/table/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/wordcount/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/wordcount/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/help/index.js";
+import "@tabler/core/dist/libs/tinymce/plugins/help/plugin.js";
+import "@tabler/core/dist/libs/tinymce/plugins/help/js/i18n/keynav/en.js";
+
 
 

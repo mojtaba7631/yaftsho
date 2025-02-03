@@ -22,10 +22,8 @@
 
         document.addEventListener("DOMContentLoaded", function () {
 
-            new Dropzone("#dropzone-default")
-        })
+            new Dropzone("#dropzone-default");
 
-        document.addEventListener("DOMContentLoaded", function () {
             var el;
             window.TomSelect && (new TomSelect(el = document.getElementById('select-states'), {
                 copyClassesToDropdown: false,
@@ -46,21 +44,8 @@
                     },
                 },
             }));
-        });
 
 
-        function formatNumber(input) {
-            // حذف همه کاراکترهای غیر از عدد
-            let value = input.value.replace(/\D/g, '');
-
-            // جدا کردن اعداد به صورت سه‌رقمی
-            value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-
-            // تنظیم مقدار جدید در input
-            input.value = value;
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
             let options = {
                 selector: '#tinymce-mytextarea',
                 height: 300,
@@ -83,11 +68,9 @@
                 options.content_css = 'dark';
             }
             tinyMCE.init(options);
-        })
 
-        document.addEventListener("DOMContentLoaded", function () {
-            var el;
-            window.TomSelect && (new TomSelect(el = document.getElementById('select-tags'), {
+            var wl;
+            window.TomSelect && (new TomSelect(wl = document.getElementById('select-tags'), {
                 copyClassesToDropdown: false,
                 dropdownParent: 'body',
                 controlInput: '<input>',
@@ -106,7 +89,19 @@
                     },
                 },
             }));
-        });
+
+        })
+
+        function formatNumber(input) {
+            // حذف همه کاراکترهای غیر از عدد
+            let value = input.value.replace(/\D/g, '');
+
+            // جدا کردن اعداد به صورت سه‌رقمی
+            value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+            // تنظیم مقدار جدید در input
+            input.value = value;
+        }
 
     </script>
 @endsection

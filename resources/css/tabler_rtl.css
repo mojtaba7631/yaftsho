@@ -1,12 +1,14 @@
-@import "@tabler/core/dist/css/tabler.rtl.min.css";
-@import "@tabler/core/dist/css/tabler-flags.rtl.min.css";
 @import "@tabler/core/dist/css/tabler-socials.rtl.min.css";
 @import "@tabler/core/dist/css/tabler-payments.rtl.min.css";
 @import "@tabler/core/dist/css/tabler-vendors.rtl.min.css";
 @import "@tabler/core/dist/css/tabler-marketing.rtl.min.css";
 @import "@tabler/core/dist/libs/dropzone/dist/dropzone.css";
 @import "@tabler/core/dist/libs/tinymce/skins/ui/oxide/skin.min.css";
-@import "@tabler/core/dist/css/demo.css";
+@import "@tabler/core/dist/libs/tinymce/skins/ui/oxide/skin.css";
+@import "@tabler/core/dist/libs/tinymce/skins/ui/oxide/content.css";
+@import "@tabler/core/dist/libs/tinymce/skins/content/default/content.css";
 @import url('https://rsms.me/inter/inter.css');
 @import "@tabler/core/dist/css/demo.rtl.min.css";
-
+@import "@tabler/core/dist/css/demo.css";
+@import "@tabler/core/dist/css/tabler.rtl.min.css";
+@import "@tabler/core/dist/css/tabler-flags.rtl.min.css";
