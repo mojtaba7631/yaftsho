@@ -1,4 +1,5 @@
 @extends('base.base_layout_tabler')
+
 @section('title')
 @endsection
 
